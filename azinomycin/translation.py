@@ -1,19 +1,16 @@
 from Bio import SeqIO
 from Bio.Seq import Seq
 
-def read_fa(file_path):
+def read_fa(path):
     sequences = []
-    for record in SeqIO.parse(file_path, "fasta"):
+    for record in SeqIO.parse(path, "fasta"):
         sequences.append(record)
     return sequences
 
 def main():
-    file_path = input("Enter the path to your FASTA file: ")
+    path = input("Enter the path to your FASTA file: ")
+    sequences = read_fa(path)
 
-    # Read sequences from the FASTA file
-    sequences = read_fasta_file(file_path)
-
-    # Translate each DNA sequence to protein and print results
     for record in sequences:
         seq_id = record.id
         dna_seq = str(record.seq)

@@ -3,9 +3,9 @@
 from Bio import SeqIO
 from prettytable import PrettyTable
 
-def read_fa(file_path)
+def read_fa(path):
     sequences = []
-    for record in SeqIO.parse(file_path, "fasta"):
+    for record in SeqIO.parse(path, "fasta"):
         sequences.append(record)
     return sequences
 
@@ -32,12 +32,11 @@ def create_table(sequences):
     return table
 
 def main():
-    file_path = input("Enter the path to your FASTA file: ")
+    path = input("Enter the path to your FASTA file: ")
 
-    sequences = read_fa(file_path)
+    sequences = read_fa(path)
     summary_table = create_table(sequences)
 
-    # Print the summary table
     print(summary_table)
 
 if __name__ == "__main__":
