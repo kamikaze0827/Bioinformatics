@@ -1,6 +1,6 @@
 # Provide basic information about the DNA sequence such as length, GC content, number of 'N' base call.
 
-dfrom Bio import SeqIO
+from Bio import SeqIO
 from prettytable import PrettyTable
 
 def read_fa(file_path)
